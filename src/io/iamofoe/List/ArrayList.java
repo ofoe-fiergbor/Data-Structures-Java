@@ -1,6 +1,5 @@
 package io.iamofoe.List;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class ArrayList<T> implements List<T> {
