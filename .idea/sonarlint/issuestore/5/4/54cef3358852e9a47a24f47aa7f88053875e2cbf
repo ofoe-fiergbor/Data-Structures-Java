@@ -1,0 +1,5 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ùÅ¿êÿÿÿÿÿ8±¡®ý˜0
+]	java:S125"<This block of commented-out lines of code should be removed.(ØÐÿÖøÿÿÿÿ8Ýù­ý˜0
+T
+java:S1128"7Remove this unused import 'io.iamofoe.List.LinkedList'.(åúâÐ8òá¯ý˜0

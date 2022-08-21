@@ -7,7 +7,7 @@ public class ArrayList<T> implements List<T> {
     private final int INITIAL_SIZE = 0;
 
     private Object[] array;
-    private int length;
+    private final int length;
     private int arraySize;
 
     public ArrayList() {

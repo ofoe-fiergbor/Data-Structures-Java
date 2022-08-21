@@ -1,6 +1,4 @@
-package io.iamofoe.List.singleLinkedList;
-
-import io.iamofoe.List.List;
+package io.iamofoe.List;
 
 import java.util.Collection;
 
@@ -23,6 +21,48 @@ public class LinkedList<T> implements List<T> {
             n.next = node;
         }
         return true;
+    }
+
+
+    @Override
+    public T set(int index, T element) {
+        Node<T> node = new Node<>();
+        node.data = element;
+
+        if (index == 0) {
+            insertAtStart(element);
+        }
+
+        Node<T> n = head;
+        for (int i = 0; i < index - 1; i++) {
+            n = n.next;
+        }
+        node.next = n.next;
+        n.next = node;
+        return element;
+    }
+
+    public void insertAtStart(T element) {
+        Node<T> node = new Node<>();
+        node.data = element;
+        node.next = head;
+        head = node;
+    }
+
+    @Override
+    public int size() {
+        int result = 0;
+        Node<T> node = head;
+        while (node != null && node.next != null) {
+            node = node.next;
+            result++;
+        }
+        return node != null ? result + 1 : result;
+    }
+
+    private static class Node<T> {
+        T data;
+        Node<T> next;
     }
 
     @Override
@@ -94,39 +134,4 @@ public class LinkedList<T> implements List<T> {
         return false;
     }
 
-    @Override
-    public T set(int index, T element) {
-        Node<T> node = new Node<>();
-        node.data = element;
-
-        if (index == 0) {
-            insertAtStart(element);
-        }
-
-        Node<T> n = head;
-        for (int i = 0; i < index - 1; i++) {
-            n = n.next;
-        }
-        node.next = n.next;
-        n.next = node;
-        return element;
-    }
-
-    public void insertAtStart(T element) {
-        Node<T> node = new Node<>();
-        node.data = element;
-        node.next = head;
-        head = node;
-    }
-
-    @Override
-    public int size() {
-        int result = 0;
-        Node<T> node = head;
-        while (node != null && node.next != null) {
-            node = node.next;
-            result++;
-        }
-        return node != null ? result + 1 : result;
-    }
 }
